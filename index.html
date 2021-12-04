@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>11조</title>
+    <meta charset="UTF-8">
+    <style>
+    body{ margin: 10px; background: #D0D0D0; margin: 0 auto;}
+    #myCanvas{background:#FFF; border: #909090 1px solid; margin: 0 auto;}
+    #wrap{background: #fff; width: 800px; height: 1400px; margin: 0 auto;}
+    h1,h3{text-align: center; padding: 30px 5px 5px 5px;}
+    p{text-align: center; padding: 0px 50px;}
+    b{color: red;}
+    </style>
+  </head>
+  <body>
+      <div id="wrap">
+        <H1>체크와 통통이</H1>
+        <canvas id="myCanvas" width="800" height="800">CANVAS를 지원하지 않습니다.</canvas>
+             <script>
+              var canvas = document.getElementById("myCanvas");
+              var ctx = canvas.getContext("2d");
+              var r,g,b,a,size,x,y;
+
+          
+                 for (var i=0; i<800; i=i+30){
+                  r=Math.round(Math.random()*255);
+                  g=Math.round(Math.random()*255);
+                  b=Math.round(Math.random()*255);
+                  a=Math.random();
+                  x=Math.round(Math.random()*800);
+                  y=Math.round(Math.random()*800);
+
+                  size=Math.round(Math.random()*30+5);
+                    ctx.beginPath();
+                    ctx.fillStyle="rgba("+r+","+g+","+b+","+a/2+")";
+                    ctx.arc(x*4, y*4, size, 0, Math.PI*2);
+                    ctx.fill();
+                    }
+                 for (var i=0; i<800; i=i+30){
+                  r=Math.round(Math.random()*255);
+                  g=Math.round(Math.random()*255);
+                  b=Math.round(Math.random()*255);
+                  a=Math.random()/2;
+                  size=Math.round(Math.random()*30+5);
+                    ctx.beginPath();
+                    ctx.fillStyle="rgba("+r+","+g+","+b+","+a+")";
+                    ctx.arc(i*4+50, i*4+50, size, 0, Math.PI*2);
+                    ctx.fill();
+                 }
+              
+                        
+                   ctx.fillStyle = "rgba("+r+","+g+","+b+",0.5)";
+                    ctx.fillRect( 0, 20, 800, 10);
+                    ctx.fillRect(20, 0, 10, 800);
+                    ctx.fillRect(760, 0, 10, 800);
+                    ctx.fillRect(0, 760, 800, 10);
+               
+                     r=Math.round(Math.random()*255);
+                  g=Math.round(Math.random()*255);
+                  b=Math.round(Math.random()*255);
+                  a=Math.random()/2;
+              
+                    ctx.fillStyle = "rgba("+r+","+g+","+b+",0.5)";
+                    ctx.fillRect(600, 0, 70, 800);
+                    ctx.fillRect(0, 700, 800, 50);
+               
+                    ctx.fillStyle = "rgba("+r+","+g+","+b+",0.3)";
+                      ctx.fillRect(500, 0, 30, 800);
+
+          </script>
+          <p><b>※여러 번 새로고침하여 감상해주세요!※</b></p>
+          <h3>제작</h3>
+          <p>22157053 남민지, 22157061전희환</p>
+          <h3>작품 설명</h3>
+          <p>"체크와 통통이는" 랜덤 요소를 주어, 새로고침을 시도할 때 마다 컬러와 원의 위치가 무작위로 변하는 패턴입니다.
+            두 가지 묶음의 체크 패턴, 대각선으로 고정된 크기와 색상이 무작위인 원, 캔버스에 무작위로 살포되는 크기와 색상이 무작위인 원의 네가지 요소로 구성되어 있습니다.<br><br><br> 전체적인 컬러에 투명도가 들어가 파스텔 톤의 귀여운 매력을 보여줍니다.
+        </div>
+   </body>
+</html>
